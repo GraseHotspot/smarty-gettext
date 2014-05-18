@@ -110,16 +110,16 @@ function smarty_block_t($params, $text) {
 	if (isset($count) && isset($plural)) {
 		// use specified textdomain if available
 		if (isset($domain)) {
-			$text = dngettext($domain, $text, $plural, $count);
+			$text = T_dngettext($domain, $text, $plural, $count);
 		} else {
-			$text = ngettext($text, $plural, $count);
+			$text = T_ngettext($text, $plural, $count);
 		}
 	} else {
 		// use specified textdomain if available
 		if (isset($domain)) {
-			$text = dgettext($domain, $text);
+			$text = T_dgettext($domain, $text);
 		} else {
-			$text = gettext($text);
+			$text = T_gettext($text);
 		}
 	}
 
